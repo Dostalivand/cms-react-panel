@@ -1,0 +1,21 @@
+.rtl-modal .modal-content {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl-modal .form-control {
+    text-align: right;
+    direction: rtl;
+}
+
+.rtl-modal .form-floating > label {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+
+.input-style{
+    width: 107px;
+    text-align: center;
+    
+}

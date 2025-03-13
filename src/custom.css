@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "IRANSans";
+    src: url(./fonts/IRANSansX-Regular.woff2);
+}
+
+@font-face {
+    font-family: "IRANSans-FaNum";
+    src: url(./fonts/IRANSansWebFaNum.ttf);
+}
+
+@font-face {
+    font-family: "IRANSans-bold";
+    src: url(./fonts/IRANSansX-Bold.woff2);
+}
+
+@font-face {
+    font-family: "Dana";
+    src: url(./fonts/DanaFaNum-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Kalameh";
+    src: url(./fonts/KalamehWebFaNumRegular.woff2);
+}
+
+:root {
+    direction: rtl;
+    --white: #ffffff;
+    --white-50: #333155;
+}
+
+body {
+    background-color: var(--white-50);
+
+}
+
+.bg-custom {
+    background-color: #edf2f8;
+}
+
+*,
+body,
+html {
+    font-family: "IRANSans-FaNum";
+    outline: none !important;
+    box-shadow: none !important;
+    unicode-bidi: embed;
+    box-sizing: border-box !important;
+
+}
+
+th {
+    font-weight: normal;
+}
+
+.shadow-custom {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 17px 7px rgba(0, 0, 0, 0) !important;
+}
+
+.btn-bg-custom {
+    background-color: #ff3366;
+}
+
+.custom-font {
+    font-family: "Dana";
+}
+
+.responsive-title-1 {
+    font-size: 1rem;
+}
+
+.responsive-text {
+    font-size: 10px;
+}
+
+
+.responsive-title {
+    font-size: 1.5rem;
+}
+
+.responsive-text {
+    font-size: 1rem;
+}
+
+.responsive-nav{
+    font-size: 1rem;
+}
+
+.responsive-button{
+    font-size: 14px;
+
+}
+
+@media (max-width: 640px) {
+    .responsive-title-1 {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 597px) {
+
+    .responsive-title-1 {
+        font-size: 10px;
+    }
+
+    .responsive-title {
+        font-size: 15px
+    }
+
+    .responsive-button{
+        font-size: 12px;
+    }
+
+    .responsive-text {
+        font-size: 13px;
+    }
+}

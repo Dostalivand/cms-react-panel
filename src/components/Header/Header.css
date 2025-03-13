@@ -1,0 +1,45 @@
+.me-2 {
+    margin-left: 10px;
+}
+
+.search-container {
+    margin-left: auto;
+    order: 2;
+}
+
+.navbar .navbar-nav {
+    justify-content: center;
+    flex: 1;
+}
+
+.offcanvas-header .btn-close {
+    position: absolute;
+    left: 10px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover:hover {
+    color: blue;
+}
+
+.nav-pills li a:hover {
+    background-color: #ff3366;
+}
+
+.bg-sidebar {
+    background: linear-gradient(180deg, #181825, #333155);
+}
+
+.list-style {
+    margin-right: -40px;
+}
+
+.custom-dropdown .dropdown-toggle::after {
+    margin-left: 10px;
+    vertical-align: middle;
+}
