@@ -32,7 +32,7 @@ export default function AddComment({ getAllComments }) {
     };
 
     const clickHandlerAddNewComment = () => {
-        fetch(`https://backend-cms.liara.run/comments`, {
+        fetch(`https://json-server-cms-new.liara.run/comments`, {
             method: 'Post',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export default function AddComment({ getAllComments }) {
         <>
             <Toaster position="top-right" reverseOrder={false} />
             <Button
-                
+
                 onClick={handleShow}
                 className="btn-md mt-2 mb-4 shadow-custom"
             >
@@ -169,3 +169,128 @@ export default function AddComment({ getAllComments }) {
         </>
     );
 }
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import toast, { Toaster } from 'react-hot-toast';
+// import { LuCirclePlus } from "react-icons/lu";
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
+// import InputGroup from 'react-bootstrap/InputGroup';
+// import Form from 'react-bootstrap/Form';
+// import './AddComment.css';
+
+// export default function AddComment({ getAllComments }) {
+//     const [show, setShow] = useState(false);
+//     const handleClose = () => setShow(false);
+//     const handleShow = () => setShow(true);
+//     const [newCommentUser, setNewCommentUser] = useState('');
+//     const [newCommentProduct, setNewCommentProduct] = useState('');
+//     const [newCommentDate, setNewCommentDate] = useState('');
+//     const [newCommentText, setNewCommentText] = useState('');
+//     const [errors, setErrors] = useState({ user: false, product: false, date: false, text: false });
+
+//     const clickHandlerAddNewComment = () => {
+//         const AddNewComment = {
+//             userName: newCommentUser,
+//             productName: newCommentProduct,
+//             date: newCommentDate,
+//             body: newCommentText
+//         };
+
+//         fetch(`https://json-server-cms-new.liara.run/comments`, {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify(AddNewComment)
+//         })
+//         .then(res => {
+//             if (!res.ok) {
+//                 throw new Error(`خطا در ارسال کامنت: ${res.status}`);
+//             }
+//             return res.json();
+//         })
+//         .then(() => {
+//             getAllComments(); // بدون نیاز به رفرش، لیست را به‌روزرسانی می‌کند
+//             emptyInput();
+//             setShow(false); // بستن مودال بعد از افزودن کامنت
+//             toast.success('🦄 با موفقیت اضافه شد!');
+//         })
+//         .catch(error => {
+//             console.error('خطا در ارسال کامنت:', error);
+//             toast.error('❌ خطایی در ارسال کامنت رخ داد!');
+//         });
+//     };
+
+//     function emptyInput() {
+//         setNewCommentUser('');
+//         setNewCommentProduct('');
+//         setNewCommentDate('');
+//         setNewCommentText('');
+//     }
+
+//     const handleFormValidation = () => {
+//         if (newCommentUser && newCommentProduct && newCommentDate && newCommentText) {
+//             setErrors({ user: false, product: false, date: false, text: false });
+//             clickHandlerAddNewComment();
+//         } else {
+//             setErrors({
+//                 user: !newCommentUser,
+//                 product: !newCommentProduct,
+//                 date: !newCommentDate,
+//                 text: !newCommentText
+//             });
+//         }
+//     };
+
+//     return (
+//         <>
+//             <Toaster position="top-right" reverseOrder={false} />
+//             <Button onClick={handleShow} className="btn-md mt-2 mb-4 shadow-custom">
+//                 <LuCirclePlus className='ml-1 fs-5' />افزودن کامنت
+//             </Button>
+//             <Modal show={show} onHide={handleClose} className="rtl-modal pr-4 pt-2" centered>
+//                 <Modal.Header>
+//                     <Modal.Title>افزودن کامنت جدید</Modal.Title>
+//                 </Modal.Header>
+//                 <Modal.Body>
+//                     <InputGroup className="mb-3">
+//                         <InputGroup.Text>نام کاربری :</InputGroup.Text>
+//                         <Form.Control value={newCommentUser} onChange={(e) => setNewCommentUser(e.target.value)} isInvalid={errors.user} />
+//                         <Form.Control.Feedback type="invalid">پر کردن این بخش الزامی میباشد.</Form.Control.Feedback>
+//                     </InputGroup>
+//                     <InputGroup className="mb-3">
+//                         <InputGroup.Text>نام محصول :</InputGroup.Text>
+//                         <Form.Control value={newCommentProduct} onChange={(e) => setNewCommentProduct(e.target.value)} isInvalid={errors.product} />
+//                         <Form.Control.Feedback type="invalid">پر کردن این بخش الزامی میباشد.</Form.Control.Feedback>
+//                     </InputGroup>
+//                     <InputGroup className="mb-3">
+//                         <InputGroup.Text>تاریخ :</InputGroup.Text>
+//                         <Form.Control value={newCommentDate} onChange={(e) => setNewCommentDate(e.target.value)} isInvalid={errors.date} />
+//                         <Form.Control.Feedback type="invalid">پر کردن این بخش الزامی میباشد.</Form.Control.Feedback>
+//                     </InputGroup>
+//                     <InputGroup className="mb-3">
+//                         <InputGroup.Text>متن کامنت :</InputGroup.Text>
+//                         <Form.Control value={newCommentText} onChange={(e) => setNewCommentText(e.target.value)} isInvalid={errors.text} />
+//                         <Form.Control.Feedback type="invalid">پر کردن این بخش الزامی میباشد.</Form.Control.Feedback>
+//                     </InputGroup>
+//                 </Modal.Body>
+//                 <Modal.Footer className="d-flex justify-content-center">
+//                     <Button variant="primary" onClick={handleFormValidation} className="w-50">
+//                         افزودن کامنت
+//                     </Button>
+//                     <Button variant="outline-danger" onClick={handleClose} className="w-25">
+//                         انصراف
+//                     </Button>
+//                 </Modal.Footer>
+//             </Modal>
+//         </>
+//     );
+// }
+
+

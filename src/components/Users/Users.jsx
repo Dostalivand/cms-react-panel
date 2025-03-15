@@ -26,7 +26,7 @@ export default function Users() {
     }, [])
 
     function getAllUsers() {
-        fetch(`https://backend-cms.liara.run/users`)
+        fetch(`https://json-server-cms-new.liara.run/users`)
             .then(res => res.json(res))
             .then(users => {
                 setAllUsers(users)
@@ -34,7 +34,7 @@ export default function Users() {
     }
 
     const deleteUserModal = () => {
-        fetch(`https://backend-cms.liara.run/users/${userID}`, {
+        fetch(`https://json-server-cms-new.liara.run/users/${userID}`, {
             method: 'DELETE'
         })
             .then((res) => {
@@ -52,7 +52,7 @@ export default function Users() {
     }
 
     const editUserModal = (updatedUser) => {
-        fetch(`https://backend-cms.liara.run/users/${updatedUser.id}`, {
+        fetch(`https://json-server-cms-new.liara.run/users/${updatedUser.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

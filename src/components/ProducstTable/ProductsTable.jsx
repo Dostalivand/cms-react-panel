@@ -10,7 +10,7 @@ export default function ProductsTable({ allProduct, getAllProducts }) {
     const [productID, setProductID] = useState(null);
 
     const editModalSubmitAction = (updatedProduct) => {
-        fetch(`https://backend-cms.liara.run/products/${updatedProduct.id}`, {
+        fetch(`https://json-server-cms-new.liara.run/products/${updatedProduct.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export default function ProductsTable({ allProduct, getAllProducts }) {
     };
 
     const deleteModalSubmitAction = () => {
-        fetch(`https://backend-cms.liara.run/products/${productID}`, {
+        fetch(`https://json-server-cms-new.liara.run/products/${productID}`, {
             method: 'DELETE',
         })
             .then((res) => {

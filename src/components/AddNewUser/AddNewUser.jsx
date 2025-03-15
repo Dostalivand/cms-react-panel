@@ -29,7 +29,7 @@ export default function AddNewUser({ getAllUsers }) {
     };
 
     const clickHandlerAddNewUser = () => {
-        fetch(`https://backend-cms.liara.run/users`, {
+        fetch(`https://json-server-cms-new.liara.run/users`, {
             method: 'Post',
             headers: {
                 'Content-Type': 'application/json',
