@@ -11,7 +11,7 @@ export default function Products() {
   }, []);
 
   const getAllProducts = () => {
-    fetch('http://localhost:8000/products')
+    fetch('https://backend-cms.liara.run/products')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Error fetching products');

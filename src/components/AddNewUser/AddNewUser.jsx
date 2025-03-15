@@ -29,7 +29,7 @@ export default function AddNewUser({ getAllUsers }) {
     };
 
     const clickHandlerAddNewUser = () => {
-        fetch(`http://localhost:8000/users`, {
+        fetch(`https://backend-cms.liara.run/users`, {
             method: 'Post',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,6 +44,8 @@ export default function AddNewUser({ getAllUsers }) {
                 setShow(false);
                 toast.success('🦄 با موفقیت اضافه شد');
             });
+
+
     };
 
     function emptyInput() {
@@ -73,7 +75,7 @@ export default function AddNewUser({ getAllUsers }) {
 
     return (
         <>
-            <Toaster position="top-right" reverseOrder={false}/>
+            <Toaster position="top-right" reverseOrder={false} />
             <Button
                 variant="primary"
                 onClick={handleShow}

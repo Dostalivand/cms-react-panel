@@ -16,6 +16,7 @@ import AnswerCommentModal from '../AnswerComment/AnswerCommentModal';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import './Comments.css';
+import { Link } from 'react-router-dom';
 
 export default function Comments() {
   const [allComments, setAllComments] = useState([]);
@@ -26,7 +27,7 @@ export default function Comments() {
   }, [])
 
   function getAllComments() {
-    fetch(`http://localhost:8000/comments`)
+    fetch(`https://backend-cms.liara.run/comments`)
       .then((res) => res.json())
       .then((comments) => {
         setAllComments(comments)
@@ -34,7 +35,7 @@ export default function Comments() {
   }
 
   const deleteCommentModal = () => {
-    fetch(`http://localhost:8000/comments/${commentID}`, {
+    fetch(`https://backend-cms.liara.run/comments/${commentID}`, {
       method: 'DELETE'
     })
       .then((res) => {
@@ -52,7 +53,7 @@ export default function Comments() {
   }
 
   const editCommentModal = (updatedComment) => {
-    fetch(`http://localhost:8000/comments/${updatedComment.id}`, {
+    fetch(`https://backend-cms.liara.run/comments/${updatedComment.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -84,7 +85,7 @@ export default function Comments() {
           </Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">
             <div className="dropdown open icon-user">
-              <a
+              <Link
                 className="text-decoration-none text-secondary dropdown-toggle pl-3"
                 type="button"
                 id="triggerId"
@@ -93,10 +94,10 @@ export default function Comments() {
                 aria-expanded="false"
               >
                 <FaUserCircle className='text-secondary mb-1 d-none d-sm-inline fs-5' /><span className='me-2 text-secondary fs-5'>حساب کاربری</span>
-              </a>
+              </Link>
               <div className="dropdown-menu pr-4 py-2 text-secondary" aria-labelledby="triggerId">
-                <a className="row text-decoration-none text-secondary pr-4 py-1 fs-6" href="#"> <IoSettingsOutline className='icon-style' />تنظیمات</a>
-                <a className="row text-decoration-none text-secondary pr-4 py-1" href="#"><TbLogout className='icon-style-2' />خروج از حساب</a>
+                <Link className="row text-decoration-none text-secondary pr-4 py-1 fs-6" to="#"> <IoSettingsOutline className='icon-style' />تنظیمات</Link>
+                <Link className="row text-decoration-none text-secondary pr-4 py-1" to="#"><TbLogout className='icon-style-2' />خروج از حساب</Link>
               </div>
             </div>
           </Navbar.Collapse>

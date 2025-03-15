@@ -14,6 +14,7 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import './AddNewProduct.css'
+import { Link } from 'react-router-dom';
 
 function AddNewProduct({ getAllProducts }) {
     const [validated, setValidated] = useState(false);
@@ -45,7 +46,7 @@ function AddNewProduct({ getAllProducts }) {
     };
 
     const clickHandlerAddNewProduct = () => {
-        fetch(`http://localhost:8000/products`, {
+        fetch(`https://backend-cms.liara.run/products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -115,7 +116,7 @@ function AddNewProduct({ getAllProducts }) {
                             </Navbar.Brand>
                             <Navbar.Collapse className="justify-content-end">
                                 <div className="dropdown open icon-user">
-                                    <a
+                                    <Link
                                         className="text-decoration-none text-secondary dropdown-toggle pl-3"
                                         type="button"
                                         id="triggerId"
@@ -124,10 +125,10 @@ function AddNewProduct({ getAllProducts }) {
                                         aria-expanded="false"
                                     >
                                         <FaUserCircle className='text-secondary mb-1 d-none d-sm-inline fs-5' /><span className='me-2 text-secondary fs-5'>حساب کاربری</span>
-                                    </a>
+                                    </Link>
                                     <div className="dropdown-menu row pr-4 py-2 text-secondary" aria-labelledby="triggerId">
-                                        <a className="row text-decoration-none text-secondary pr-4 py-1 fs-6" href="#"> <IoSettingsOutline className='icon-style' />تنظیمات</a>
-                                        <a className="row text-decoration-none text-secondary pr-4 py-1" href="#"><TbLogout className='icon-style-2' />خروج از حساب</a>
+                                        <Link className="row text-decoration-none text-secondary pr-4 py-1 fs-6" to="#"> <IoSettingsOutline className='icon-style' />تنظیمات</Link>
+                                        <Link className="row text-decoration-none text-secondary pr-4 py-1" to="#"><TbLogout className='icon-style-2' />خروج از حساب</Link>
                                     </div>
                                 </div>
                             </Navbar.Collapse>

@@ -32,7 +32,7 @@ export default function AddComment({ getAllComments }) {
     };
 
     const clickHandlerAddNewComment = () => {
-        fetch(`http://localhost:8000/comments`, {
+        fetch(`https://backend-cms.liara.run/comments`, {
             method: 'Post',
             headers: {
                 'Content-Type': 'application/json',

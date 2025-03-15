@@ -14,6 +14,7 @@ import AddNewUser from '../AddNewUser/AddNewUser';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import './Users.css'
+import { Link } from 'react-router-dom';
 
 export default function Users() {
 
@@ -25,7 +26,7 @@ export default function Users() {
     }, [])
 
     function getAllUsers() {
-        fetch(`http://localhost:8000/users`)
+        fetch(`https://backend-cms.liara.run/users`)
             .then(res => res.json(res))
             .then(users => {
                 setAllUsers(users)
@@ -33,7 +34,7 @@ export default function Users() {
     }
 
     const deleteUserModal = () => {
-        fetch(`http://localhost:8000/users/${userID}`, {
+        fetch(`https://backend-cms.liara.run/users/${userID}`, {
             method: 'DELETE'
         })
             .then((res) => {
@@ -51,7 +52,7 @@ export default function Users() {
     }
 
     const editUserModal = (updatedUser) => {
-        fetch(`http://localhost:8000/users/${updatedUser.id}`, {
+        fetch(`https://backend-cms.liara.run/users/${updatedUser.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +85,7 @@ export default function Users() {
                     </Navbar.Brand>
                     <Navbar.Collapse className="justify-content-end">
                         <div className="dropdown open icon-user">
-                            <a
+                            <Link
                                 className="text-decoration-none text-secondary dropdown-toggle pl-3"
                                 type="button"
                                 id="triggerId"
@@ -93,10 +94,10 @@ export default function Users() {
                                 aria-expanded="false"
                             >
                                 <FaUserCircle className='text-secondary mb-1 d-none d-sm-inline fs-5' /><span className='me-2 text-secondary fs-5'>حساب کاربری</span>
-                            </a>
+                            </Link>
                             <div className="dropdown-menu pr-4 py-2 text-secondary" aria-labelledby="triggerId">
-                                <a className="row text-decoration-none text-secondary pr-4 py-1 fs-6" href="#"> <IoSettingsOutline className='icon-style' />تنظیمات</a>
-                                <a className="row text-decoration-none text-secondary pr-4 py-1" href="#"><TbLogout className='icon-style-2' />خروج از حساب</a>
+                                <Link className="row text-decoration-none text-secondary pr-4 py-1 fs-6" to="#"> <IoSettingsOutline className='icon-style' />تنظیمات</Link>
+                                <Link className="row text-decoration-none text-secondary pr-4 py-1" to="#"><TbLogout className='icon-style-2' />خروج از حساب</Link>
                             </div>
                         </div>
                     </Navbar.Collapse>
