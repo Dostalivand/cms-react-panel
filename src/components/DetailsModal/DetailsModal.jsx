@@ -9,7 +9,6 @@ import Modal from 'react-bootstrap/Modal';
 function DetailsModal({ product }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     const [productInfo, setProductInfo] = useState({})
 
     return (

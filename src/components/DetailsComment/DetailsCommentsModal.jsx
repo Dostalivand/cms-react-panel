@@ -8,7 +8,6 @@ export default function DetailsCommentsModal({ comment }) {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     const [commentInfo, setCommentInfo] = useState({})
 
     return (

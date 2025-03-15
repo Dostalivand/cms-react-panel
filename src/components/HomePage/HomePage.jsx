@@ -9,6 +9,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FcHome } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
     return (
@@ -21,7 +22,7 @@ export default function HomePage() {
                     </Navbar.Brand>
                     <Navbar.Collapse className="justify-content-end">
                         <div className="dropdown open icon-user">
-                            <a
+                            <Link
                                 className="text-decoration-none text-secondary dropdown-toggle pl-3"
                                 type="button"
                                 id="triggerId"
@@ -30,10 +31,10 @@ export default function HomePage() {
                                 aria-expanded="false"
                             >
                                 <FaUserCircle className='text-secondary mb-1 d-none d-sm-inline fs-5' /><span className='me-2 text-secondary fs-5'>حساب کاربری</span>
-                            </a>
+                            </Link>
                             <div className="dropdown-menu pr-4 py-2 text-secondary" aria-labelledby="triggerId">
-                                <a className="row text-decoration-none text-secondary pr-4 py-1 fs-6" href="#"> <IoSettingsOutline className='icon-style' />تنظیمات</a>
-                                <a className="row text-decoration-none text-secondary pr-4 py-1" href="#"><TbLogout className='icon-style-2' />خروج از حساب</a>
+                                <Link className="row text-decoration-none text-secondary pr-4 py-1 fs-6" to="#"> <IoSettingsOutline className='icon-style' />تنظیمات</Link>
+                                <Link className="row text-decoration-none text-secondary pr-4 py-1" to="#"><TbLogout className='icon-style-2' />خروج از حساب</Link>
                             </div>
                         </div>
                     </Navbar.Collapse>

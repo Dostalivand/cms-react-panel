@@ -26,9 +26,6 @@ export default function AnswerCommentModal() {
         toast.success('🦄 پاسخ شما با موفقیت ارسال شد!');
     };
 
-    const addAnswerComment = {
-        answerComment: answerComment,
-    };
 
     const handleFormValidation = () => {
         if (answerComment) {

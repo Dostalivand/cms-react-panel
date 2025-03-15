@@ -20,10 +20,10 @@ export default function Header() {
                 <div className='row min-vh-100'>
                     <div className='bg-sidebar w-auto col-auto col-md-2 min-vh-100'>
                         <div className='d-flex justify-content-center text-nowrap pl-4 pr-2'>
-                            <a className='text-decoration-none text-white d-none d-sm-inline mt-3'>
+                            <Link className='text-decoration-none text-white d-none d-sm-inline mt-3'>
                                 <i className='fs-4'></i>
                                 <span className='me-3 d-none d-sm-inline fs-4'>پنل مدیریت</span>
-                            </a>
+                            </Link>
                         </div>
                         <hr className='text-secondary d-none d-sm-block' />
                         <ul className="nav nav-pills flex-column mt-3 mt-sm-0 list-style">
