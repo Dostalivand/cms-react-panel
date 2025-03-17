@@ -43,7 +43,7 @@ const Dashboard = () => {
     }, []);
 
     if (data.length === 0 || barData.length === 0) {
-        return <div className="d-flex justify-content-center align-items-center">در حال بارگذاری داده‌ها...</div>;
+        return <div className="d-flex justify-content-center align-items-center text-white">در حال اتصال به سرور ...</div>;
     }
 
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {

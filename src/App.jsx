@@ -6,7 +6,7 @@ import Products from "./components/Products/Products";
 import Comments from "./components/Comments/Comments";
 import Users from "./components/Users/Users";
 import HomePage from "./components/HomePage/HomePage";
-import './App.css'
+
 
 
 export default function App() {

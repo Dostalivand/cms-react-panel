@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { VscEye } from "react-icons/vsc";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import './DetailsCommentsModal.css'
+
 
 export default function DetailsCommentsModal({ comment }) {
 

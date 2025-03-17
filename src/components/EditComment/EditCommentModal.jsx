@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { FaRegEdit } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
-import './EditCommentModal.css'
+
 
 export default function EditCommentModal({ onSubmit, comment }) {
 

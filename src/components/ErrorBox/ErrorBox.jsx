@@ -1,7 +1,7 @@
 import React from 'react'
 import { Alert } from 'react-bootstrap'
 import { BsExclamationCircle } from "react-icons/bs";
-import './ErrorBox.css'
+
 
 export default function ErrorBox({message}) {
     return (

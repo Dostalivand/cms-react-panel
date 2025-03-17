@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { TbListDetails } from "react-icons/tb";
-import './DetailsUserModal.css'
+
 
 export default function DetailsUserModal({ user }) {
 
