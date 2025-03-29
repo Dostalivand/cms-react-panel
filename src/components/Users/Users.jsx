@@ -26,7 +26,7 @@ export default function Users() {
     }, [])
 
     function getAllUsers() {
-        fetch(`https://json-server-cms-new.liara.run/users`)
+        fetch(`https://backend-cms.liara.run/users`)
             .then(res => res.json(res))
             .then(users => {
                 setAllUsers(users)
@@ -34,7 +34,7 @@ export default function Users() {
     }
 
     const deleteUserModal = () => {
-        fetch(`https://json-server-cms-new.liara.run/users/${userID}`, {
+        fetch(`https://backend-cms.liara.run/users/${userID}`, {
             method: 'DELETE'
         })
             .then((res) => {
@@ -44,15 +44,15 @@ export default function Users() {
                 return res.json();
             })
             .then(() => {
-                getAllUsers(); // به‌روزرسانی لیست محصولات پس از حذف
+                getAllUsers();
             })
             .catch((error) => {
-                console.error('Error deleting product:', error.message); // نمایش خطا در کنسول
+                console.error('Error deleting product:', error.message);
             });
     }
 
     const editUserModal = (updatedUser) => {
-        fetch(`https://json-server-cms-new.liara.run/users/${updatedUser.id}`, {
+        fetch(`https://backend-cms.liara.run/users/${updatedUser.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,10 +66,10 @@ export default function Users() {
                 return res.json();
             })
             .then(() => {
-                getAllUsers(); // به‌روزرسانی لیست محصولات پس از ویرایش
+                getAllUsers();
             })
             .catch((error) => {
-                console.error('Error updating product:', error.message); // نمایش خطا در کنسول
+                console.error('Error updating product:', error.message); 
             });
 
     }
