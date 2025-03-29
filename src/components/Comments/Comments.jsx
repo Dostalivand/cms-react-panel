@@ -27,7 +27,7 @@ export default function Comments() {
   }, [])
 
   function getAllComments() {
-    fetch(`https://json-server-cms-new.liara.run/comments`)
+    fetch(`https://backend-cms.liara.run/comments`)
       .then((res) => res.json())
       .then((comments) => {
         setAllComments(comments)
@@ -35,7 +35,7 @@ export default function Comments() {
   }
 
   const deleteCommentModal = () => {
-    fetch(`https://json-server-cms-new.liara.run/comments/${commentID}`, {
+    fetch(`https://backend-cms.liara.run/comments/${commentID}`, {
       method: 'DELETE'
     })
       .then((res) => {
@@ -53,7 +53,7 @@ export default function Comments() {
   }
 
   const editCommentModal = (updatedComment) => {
-    fetch(`https://json-server-cms-new.liara.run/comments/${updatedComment.id}`, {
+    fetch(`https://backend-cms.liara.run/comments/${updatedComment.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
