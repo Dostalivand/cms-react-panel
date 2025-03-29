@@ -22,9 +22,9 @@ const Dashboard = () => {
 
     useEffect(() => {
         Promise.all([
-            fetch("https://json-server-cms-new.liara.run/comments").then((response) => response.json()),
-            fetch("https://json-server-cms-new.liara.run/products").then((response) => response.json()),
-            fetch("https://json-server-cms-new.liara.run/users").then((response) => response.json())
+            fetch("https://backend-cms.liara.run/comments").then((response) => response.json()),
+            fetch("https://backend-cms.liara.run/products").then((response) => response.json()),
+            fetch("https://backend-cms.liara.run/users").then((response) => response.json())
         ])
             .then(([comments, products, users]) => {
                 setData([
