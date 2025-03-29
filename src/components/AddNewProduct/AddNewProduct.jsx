@@ -46,7 +46,7 @@ function AddNewProduct({ getAllProducts }) {
     };
 
     const clickHandlerAddNewProduct = () => {
-        fetch(`https://json-server-cms-new.liara.run/products`, {
+        fetch(`https://backend-cms.liara.run/products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
